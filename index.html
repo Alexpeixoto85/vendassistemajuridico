@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lexora Ultra - O ERP Jurídico que Multiplica sua Eficiência e Lucratividade. Gestão completa para advogados e escritórios jurídicos.">
+    <meta name="keywords" content="ERP jurídico, gestão de escritório de advocacia, software jurídico, CRM para advogados">
+    <title>Lexora Ultra — O ERP Jurídico que Transforma seu Escritório</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #16243f;
+            --ink-soft: #22324f;
+            --brass: #b08332;
+            --brass-deep: #8a6420;
+            --brass-soft: #e9d9b6;
+            --parch: #f4f0e8;
+            --parch-2: #efe9dd;
+            --surface: #ffffff;
+            --text: #1f2733;
+            --text-2: #5d6573;
+            --text-3: #8b919c;
+            --line: #e3ddd0;
+            --green: #3f7d54;
+            --green-bg: #e6f0e8;
+            --red: #b23a3a;
+            --red-bg: #f6e3e1;
+            --amber: #c08a2a;
+            --amber-bg: #f7eed6;
+            --blue: #3a5a9b;
+            --blue-bg: #e5ebf6;
+            --radius: 14px;
+            --shadow: 0 2px 8px rgba(22, 36, 63, 0.08);
+            --shadow-lg: 0 12px 32px rgba(22, 36, 63, 0.16);
+            --sans: 'Public Sans', system-ui, sans-serif;
+            --serif: 'Fraunces', Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--parch);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .navbar-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--brass), var(--brass-deep));
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+        }
+
+        .navbar-title {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .navbar-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .navbar-nav a:hover {
+            color: var(--brass);
+        }
+
+        .navbar-cta {
+            background: linear-gradient(135deg, var(--brass), var(--brass-deep));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(176, 131, 50, 0.3);
+        }
+
+        .navbar-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(176, 131, 50, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+            color: white;
+            padding: 120px 32px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: var(--serif);
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brass), var(--brass-deep));
+            color: white;
+            box-shadow: 0 4px 12px rgba(176, 131, 50, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(176, 131, 50, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-2);
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: var(--surface);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .problem-content h3 {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--ink);
+        }
+
+        .problem-content p {
+            font-size: 16px;
+            color: var(--text-2);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .problem-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: var(--text-2);
+        }
+
+        .problem-list li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .problem-image {
+            background: linear-gradient(135deg, var(--brass-soft), var(--amber-bg));
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(135deg, var(--brass-soft) 0%, var(--amber-bg) 100%);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .solution-image {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            font-size: 80px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .solution-content h3 {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--ink);
+        }
+
+        .solution-content p {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .solution-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .solution-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: var(--text);
+        }
+
+        .solution-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--surface);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--parch-2);
+            border-radius: var(--radius);
+            padding: 32px;
+            border: 1px solid var(--line);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            background: var(--surface);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-2);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, var(--blue-bg) 0%, var(--green-bg) 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius);
+            padding: 28px;
+            border-left: 4px solid var(--brass);
+        }
+
+        .benefit-item h4 {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .benefit-item p {
+            font-size: 14px;
+            color: var(--text-2);
+            line-height: 1.6;
+        }
+
+        /* Security Section */
+        .security {
+            background: var(--surface);
+        }
+
+        .security-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .security-icon {
+            font-size: 100px;
+            text-align: center;
+        }
+
+        .security-text h3 {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--ink);
+        }
+
+        .security-text p {
+            font-size: 16px;
+            color: var(--text-2);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .security-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--green-bg);
+            color: var(--green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 32px;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: var(--serif);
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 48px 32px;
+            text-align: center;
+            border-top: 1px solid var(--ink-soft);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--brass-soft);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .problem-grid,
+            .solution-grid,
+            .security-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 24px;
+            }
+
+            .hero {
+                padding: 80px 24px;
+            }
+
+            .cta {
+                padding: 60px 24px;
+            }
+
+            .cta-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="#" class="navbar-brand">
+            <div class="navbar-logo">⚖️</div>
+            <div class="navbar-title">Lexora Ultra</div>
+        </a>
+        <div class="navbar-nav">
+            <a href="#features">Recursos</a>
+            <a href="#benefits">Benefícios</a>
+            <a href="#security">Segurança</a>
+            <a href="https://wa.me/5582996622036?text=Ol%C3%A1%21+Tenho+interesse+no+sistema+Lexora+Ultra." class="navbar-cta">Comprar Agora</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-container">
+        <h1 class="hero-title">O ERP Jurídico que Multiplica sua Eficiência e Lucratividade</h1>
+        <p class="hero-subtitle">Chega de planilhas e sistemas complexos. Gerencie seu escritório de advocacia com inteligência, segurança e simplicidade.</p>
+        <div class="hero-cta">
+            <a href="#cta" class="btn btn-primary">🚀 Começar Agora</a>
+            <a href="#features" class="btn btn-secondary">📺 Ver Recursos</a>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="section problem">
+    <div class="problem-grid">
+        <div class="problem-content">
+            <h3>Seu Escritório Enfrenta Estes Desafios?</h3>
+            <p>Advogados e gestores de escritórios jurídicos lidam diariamente com problemas que comprometem a produtividade e a lucratividade:</p>
+            <ul class="problem-list">
+                <li>Prazos fatais perdidos por falta de organização</li>
+                <li>Controle financeiro nebuloso e impreciso</li>
+                <li>Dificuldade em rastrear horas trabalhadas por cliente</li>
+                <li>Dados espalhados em múltiplos sistemas</li>
+                <li>Preocupação constante com segurança de informações</li>
+                <li>Equipe desorganizada e comunicação ineficiente</li>
+            </ul>
+        </div>
+        <div class="problem-image">
+            📋
+        </div>
+    </div>
+</section>
+
+<!-- SOLUTION SECTION -->
+<section class="section solution">
+    <div class="solution-grid">
+        <div class="solution-image">
+            ✨
+        </div>
+        <div class="solution-content">
+            <h3>A Solução: Lexora Ultra</h3>
+            <p>O Lexora Ultra foi criado especificamente para resolver os desafios da advocacia moderna. Uma plataforma completa que funciona 100% no seu navegador, sem mensalidades e com total privacidade.</p>
+            <ul class="solution-list">
+                <li>Alertas inteligentes para nunca mais perder prazos</li>
+                <li>Dashboard financeiro com visibilidade total</li>
+                <li>Timesheet preciso para cálculo de rentabilidade</li>
+                <li>Todos os dados centralizados em um único lugar</li>
+                <li>Segurança máxima: dados 100% locais</li>
+                <li>Equipe organizada com Kanban visual</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="section features" id="features">
+    <h2 class="section-title">Recursos Poderosos para sua Advocacia</h2>
+    <p class="section-subtitle">Tudo o que você precisa para gerenciar um escritório jurídico moderno e lucrativo.</p>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h4 class="feature-title">Dashboard de BI</h4>
+            <p class="feature-desc">Visualize KPIs em tempo real, gráficos de faturamento e indicadores de performance do seu escritório.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h4 class="feature-title">CRM Jurídico</h4>
+            <p class="feature-desc">Gerencie leads, clientes e processos desde o primeiro contato até o encerramento do caso.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💼</div>
+            <h4 class="feature-title">Gestão de Processos</h4>
+            <p class="feature-desc">Acompanhamento completo de casos com número CNJ, tipo de ação, área jurídica e valor da causa.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h4 class="feature-title">Agenda Inteligente</h4>
+            <p class="feature-desc">Alertas automáticos para prazos fatais, audiências e compromissos. Nunca mais perca uma data importante.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h4 class="feature-title">Controle Financeiro</h4>
+            <p class="feature-desc">Gestão completa de receitas, despesas, honorários e fluxo de caixa com relatórios detalhados.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h4 class="feature-title">Kanban de Tarefas</h4>
+            <p class="feature-desc">Organize o fluxo de trabalho da equipe com um painel visual intuitivo e colaborativo.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h4 class="feature-title">Timesheet</h4>
+            <p class="feature-desc">Registre horas trabalhadas por caso e calcule automaticamente a rentabilidade de cada cliente.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h4 class="feature-title">Gestão de Documentos</h4>
+            <p class="feature-desc">Repositório centralizado com gerador de templates para procurações, contratos e petições.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h4 class="feature-title">Relatórios & BI</h4>
+            <p class="feature-desc">Análises estratégicas sobre faturamento, performance, processos e prazos com exportação de dados.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h4 class="feature-title">Auditoria Completa</h4>
+            <p class="feature-desc">Histórico detalhado de todas as atividades do sistema para transparência e segurança jurídica.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👨‍💼</div>
+            <h4 class="feature-title">Gestão de Usuários</h4>
+            <p class="feature-desc">Controle de acesso granular com perfis de admin, advogado e assistente.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💵</div>
+            <h4 class="feature-title">Honorários Jurídicos</h4>
+            <p class="feature-desc">Gestão específica de honorários contratuais, sucumbenciais e dativos com análise de rentabilidade.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section class="section benefits" id="benefits">
+    <h2 class="section-title">Por Que Escolher Lexora Ultra?</h2>
+    <p class="section-subtitle">Benefícios que transformam a gestão do seu escritório.</p>
+    <div class="benefits-grid">
+        <div class="benefit-item">
+            <h4>🚀 Produtividade Inigualável</h4>
+            <p>Organize tarefas com Kanban, gerencie prazos com alertas inteligentes e registre horas com precisão. Sua equipe trabalha melhor.</p>
+        </div>
+        <div class="benefit-item">
+            <h4>💡 Inteligência de Negócios</h4>
+            <p>Tome decisões estratégicas com um Dashboard completo, gráficos de faturamento e relatórios de performance em tempo real.</p>
+        </div>
+        <div class="benefit-item">
+            <h4>🔒 Segurança e Privacidade</h4>
+            <p>Seus dados ficam 100% no seu computador, sem nuvens de terceiros. Total conformidade com LGPD/GDPR e zero dependência de internet.</p>
+        </div>
+        <div class="benefit-item">
+            <h4>💎 Controle Financeiro Total</h4>
+            <p>Gerencie receitas, despesas e honorários com clareza. Saiba exatamente quanto seu escritório lucra por processo.</p>
+        </div>
+        <div class="benefit-item">
+            <h4>👥 CRM Jurídico Completo</h4>
+            <p>Acompanhe leads, clientes e processos desde o primeiro contato. Aumente sua carteira de clientes com organização.</p>
+        </div>
+        <div class="benefit-item">
+            <h4>💰 Zero Mensalidades</h4>
+            <p>Compre uma vez e use para sempre. Sem custos recorrentes, sem surpresas. Seu investimento é único e definitivo.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECURITY SECTION -->
+<section class="section security" id="security">
+    <h2 class="section-title">Sua Informação é Sua, e de Mais Ninguém</h2>
+    <div class="security-content">
+        <div class="security-icon">🛡️</div>
+        <div class="security-text">
+            <h3>Segurança em Primeiro Lugar</h3>
+            <p>Em um mundo onde a privacidade de dados é crucial, o Lexora Ultra se destaca. Por ser um sistema 100% local e baseado em navegador, seus dados sensíveis permanecem exclusivamente no seu ambiente, sem a necessidade de servidores externos ou assinaturas mensais.</p>
+            <p>Tenha a tranquilidade de saber que suas informações estão seguras, sob seu controle total, e conformes com as regulamentações de proteção de dados mais rigorosas.</p>
+            <div class="security-badges">
+                <span class="badge">✓ 100% Local</span>
+                <span class="badge">✓ Sem Nuvem</span>
+                <span class="badge">✓ LGPD Compliant</span>
+                <span class="badge">✓ GDPR Ready</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta" id="cta">
+    <div class="cta-content">
+        <h2 class="cta-title">Pronto para Revolucionar a Gestão do seu Escritório?</h2>
+        <p class="cta-subtitle">Experimente o Lexora Ultra hoje mesmo e descubra o poder de uma gestão jurídica inteligente, segura e eficiente.</p>
+        <a href="https://wa.me/5582996622036?text=Ol%C3%A1%21+Tenho+interesse+no+sistema+Lexora+Ultra." class="btn btn-primary" style="font-size: 18px; padding: 16px 40px;">
+            🚀 COMPRAR AGORA
+        </a>
+        <p style="margin-top: 24px; font-size: 14px; color: rgba(255, 255, 255, 0.8);">
+            Comece a transformar seu escritório em uma máquina de eficiência e lucratividade!
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <strong>Lexora Ultra</strong> © 2026 — O ERP Jurídico que Transforma sua Advocacia
+        </div>
+        <div class="footer-links">
+            <a href="#features">Recursos</a>
+            <a href="#benefits">Benefícios</a>
+            <a href="#security">Segurança</a>
+            <a href="mailto:contato@lexora.com">Contato</a>
+            <a href="#">Política de Privacidade</a>
+        </div>
+        <div class="footer-text" style="margin-top: 20px; font-size: 12px; color: rgba(255, 255, 255, 0.6);">
+            Desenvolvido com ❤️ para advogados modernos
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
