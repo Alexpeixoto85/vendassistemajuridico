@@ -203,6 +203,33 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
 
+        /* Video Section */
+        .video-section {
+            background: var(--surface);
+            padding: 80px 32px;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* Section */
         .section {
             padding: 80px 32px;
@@ -566,6 +593,10 @@
             .cta-title {
                 font-size: 28px;
             }
+
+            .video-section {
+                padding: 40px 24px;
+            }
         }
     </style>
 </head>
@@ -596,6 +627,18 @@
             <a href="#cta" class="btn btn-primary">🚀 Começar Agora</a>
             <a href="#features" class="btn btn-secondary">📺 Ver Recursos</a>
         </div>
+    </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/pwLnfl7nfeg" 
+            title="Lexora Ultra Video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
     </div>
 </section>
 
